@@ -1,22 +1,23 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router, NavigationStart, NavigationEnd } from '@angular/router';
-import { Providers } from './providers';
-
+import { Providers } from '../providers';
 declare var $:any;
 
 @Component({
-  selector: 'body',
-  templateUrl: './app.component.html',
+  templateUrl: './theme.component.html',
   encapsulation: ViewEncapsulation.None,
+  styleUrls: ['../../assets/css/theme.bundle.css']
 })
-export class AppComponent implements OnInit {
+export class ThemeComponent implements OnInit {
   constructor(private _router: Router) {
   }
 
   ngOnInit() {
+    Providers.Bundle.loadThemeScripts().then(() => {
+      Providers.Helper.SetLoading(false);
+    });
     this._router.events.subscribe((route) => {
       if (route instanceof NavigationStart) {
-        
         //Providers.Helper.SetLoading(true);
       }
       if (route instanceof NavigationEnd) {
