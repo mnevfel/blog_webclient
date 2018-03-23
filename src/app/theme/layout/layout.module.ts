@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
-    NavBarComponent,
+    HeaderComponent,
     FooterComponent
   ],
   exports: [
-    NavBarComponent,
+    HeaderComponent,
     FooterComponent
   ],
   imports: [
@@ -18,5 +18,5 @@ import { RouterModule } from '@angular/router';
     RouterModule,
   ]
 })
-export class ManageLayoutModule {
+export class ThemeLayoutModule {
 }
